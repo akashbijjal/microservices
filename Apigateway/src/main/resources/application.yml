@@ -1,0 +1,18 @@
+server:
+  port: 8083
+ 
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: hr-service
+        uri: http://localhost:9595/
+        predicates:
+        - Path=/hr/**
+      
+      
+      
+#- id: departmentservice
+#        uri: http://localhost:9091/
+#        predicates:
+#        - Path=/dept/**
